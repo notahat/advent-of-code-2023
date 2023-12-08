@@ -1,0 +1,10 @@
+require "minitest/test_task"
+require_relative "lib/calibrate"
+
+Minitest::TestTask.create
+
+task :default do
+  puts File.readlines("input.txt")
+    .map(&Calibrate.method(:line_value))
+    .sum
+end

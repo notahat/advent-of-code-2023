@@ -1,0 +1,28 @@
+require "minitest/test_task"
+require_relative "lib/cubes"
+
+Minitest::TestTask.create
+
+desc "Part one"
+task :part_one do
+  all_cubes = {red: 12, green: 13, blue: 14}
+
+  result = File.readlines("input.txt")
+    .map { |line| Cubes.parse_game(line) }
+    .select { |game| Cubes.game_possible?(all_cubes, game[:handfuls]) }
+    .map { |game| game[:id] }
+    .sum
+
+  p result
+end
+
+desc "Part two"
+task :part_two do
+  result = File.readlines("input.txt")
+    .map { |line| Cubes.parse_game(line) }
+    .map { |game| Cubes.fewest_cubes(game[:handfuls]) }
+    .map { |cubes| Cubes.power(cubes) }
+    .sum
+
+  p result
+end

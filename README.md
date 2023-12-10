@@ -29,3 +29,11 @@ I thought I'd try out sorbet with Ruby this time. Wasn't really worth it. I
 spent a bunch of time arguing with sorbet, and didn't win. For this sort of
 problem where we're only dealing with well-formed input, strict types don't
 help that much.
+
+### Day 5: If You Give A Seed A Fertilizer
+
+Plain old Ruby for this one.
+
+Part 1 was easy, but part 2 seems much harder, and I'm still working on it.
+I've got a path forward, but I feel like I've missed something that could
+simplify things.

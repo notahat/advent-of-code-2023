@@ -28,4 +28,7 @@ end
 seeds = parse_seeds(sections.shift)
 maps = sections.map { |section| parse_map(section) }
 
+one_big_map = maps.reduce(:compose)
+
 puts seeds.map { |value| map_map_map(maps, value) }.min
+puts seeds.map { |value| one_big_map[value] }.min

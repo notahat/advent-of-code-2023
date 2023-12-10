@@ -23,4 +23,18 @@ describe Map do
       enumerator.next
     end
   end
+
+  it "iterates over ranges between values" do
+    enumerator = @map.each_range_between(5, 20)
+    _(enumerator.next).must_equal([5, 10, 0])
+    _(enumerator.next).must_equal([10, 15, 10])
+    _(enumerator.next).must_equal([15, 20, 0])
+    assert_raises StopIteration do
+      enumerator.next
+    end
+  end
+
+  it "composes" do
+    _(@map.compose(@map)).must_equal(@map)
+  end
 end

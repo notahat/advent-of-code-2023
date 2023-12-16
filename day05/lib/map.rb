@@ -69,6 +69,12 @@ class Map
     end
   end
 
+  def lowest(min, max)
+    each_range_between(min, max)
+      .map { |min, _, _| self[min] }
+      .min
+  end
+
   def compose(other)
     result = Map.new
 

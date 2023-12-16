@@ -34,6 +34,6 @@ help that much.
 
 Plain old Ruby for this one.
 
-Part 1 was easy, but part 2 seems much harder, and I'm still working on it.
-I've got a path forward, but I feel like I've missed something that could
-simplify things.
+Part 1 was easy, but part 2 was much harder. I had to figure out a way to
+efficiently compose all the maps to make the computation take a reasonable
+amount of time. I'm not sure if there's a simpler approach.

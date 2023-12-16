@@ -37,3 +37,9 @@ Plain old Ruby for this one.
 Part 1 was easy, but part 2 was much harder. I had to figure out a way to
 efficiently compose all the maps to make the computation take a reasonable
 amount of time. I'm not sure if there's a simpler approach.
+
+### Day 6: Wait For It
+
+Got this one super quick! Realised that you could boil this down to finding the
+roots of a quadratic equation, and did that straight away for part one. The
+same approach worked for part 2, so it fell out in a couple of minutes.

@@ -43,3 +43,23 @@ amount of time. I'm not sure if there's a simpler approach.
 Got this one super quick! Realised that you could boil this down to finding the
 roots of a quadratic equation, and did that straight away for part one. The
 same approach worked for part 2, so it fell out in a couple of minutes.
+
+### Day 7: Camel Cards
+
+This was a good one to roughly TDD. Part one was straightforward, although I
+made a couple of simple mistakes that meant I submitted some wrong answers.
+
+Part two was easy once I figured out you just had to identify the most common
+card in the hand, and make the wildcards match that.
+
+### Day 8: Haunted Wasteland
+
+This one was fun! I started out trying to bruteforce part 2, but gave up after
+running it for a while. The problem hinted that the answer would be really big.
+
+Once I looked at the data it was straightforward. From each starting node, you
+get a regularly repeating cycle. Once you know how long these cycles are, you
+can find the least common multiple of them to get the answer.
+
+This is slightly dissatisfiying, as it's not a general solution to the problem.
+Input data that didn't have these straightfroward would be much harder.

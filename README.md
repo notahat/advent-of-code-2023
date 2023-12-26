@@ -63,3 +63,8 @@ can find the least common multiple of them to get the answer.
 
 This is slightly dissatisfiying, as it's not a general solution to the problem.
 Input data that didn't have these straightfroward would be much harder.
+
+### Day 9: Mirage Maintenance
+
+Super easy. No algorithmic complexity, and part two was a simple change from
+part one.

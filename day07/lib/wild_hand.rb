@@ -1,7 +1,7 @@
-class Hand
+class WildHand
   include Comparable
 
-  CARD_ORDER = "23456789TJQKA"
+  CARD_ORDER = "J23456789TQKA"
 
   HIGH_CARD = 1
   ONE_PAIR = 2
@@ -19,6 +19,8 @@ class Hand
   attr_reader :bid
 
   def type
+    return FIVE_OF_A_KIND if @cards == "JJJJJ"
+
     @type ||= case sorted_cards
     when /(.)\1\1\1\1/
       FIVE_OF_A_KIND
@@ -38,7 +40,7 @@ class Hand
   end
 
   def sorted_cards
-    @sorted_card ||= @cards.split("").sort.join
+    @sorted_card ||= cards_with_wilds_replaced.split("").sort.join
   end
 
   def <=>(other)
@@ -50,5 +52,16 @@ class Hand
     @card_values ||= @cards
       .split("")
       .map { |card| CARD_ORDER.index(card) }
+  end
+
+  def cards_with_wilds_replaced
+    @cards_with_wilds_replaced ||= @cards.gsub("J", most_common_card)
+  end
+
+  def most_common_card
+    cards_without_wilds = @cards.delete("J")
+    card_frequency = Hash.new(0)
+    cards_without_wilds.each_char { |card| card_frequency[card] += 1 }
+    card_frequency.max_by { |card, count| count }.first
   end
 end
